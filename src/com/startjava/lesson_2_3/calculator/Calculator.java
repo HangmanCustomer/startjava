@@ -49,10 +49,5 @@ public class Calculator {
     {
         stringA = a;
     }
-//    public void setB(String[] b) {
-//        compArray = Arrays.copyOf(b,3);
-//    }
-//    public void setCh(char ch){
-//        this.ch = ch;
-//    }
+
 }

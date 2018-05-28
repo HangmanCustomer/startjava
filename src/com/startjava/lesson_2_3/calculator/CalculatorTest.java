@@ -13,8 +13,6 @@ public class CalculatorTest {
             calc.setA(scanner.nextLine());
             calc.calcMath();
             do{
-//                String[] b = {"0", "0", "0"};
-//                calc.setB(b);
                 System.out.print("Repeat calculate press [Y/N] ");
                 yesOrNo = scanner.next();
 
