@@ -1,12 +1,9 @@
 package com.startjava.lesson_2_3.calculator;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Calculator {
     private String stringA;
     private String[] compArray= new String[3];
-
 
     public void calcMath() {
         compArray = Arrays.copyOf(stringA.split(" ", 3),3);
