@@ -1,48 +1,58 @@
 package com.startjava.lesson_2_3.calculator;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Calculator {
-    private int a;
-    private int b;
-    private char ch;
+    private String stringA;
+    private String[] compArray= new String[3];
+
 
     public void calcMath() {
+        compArray = Arrays.copyOf(stringA.split(" ", 3),3);
+        int a = Integer.parseInt(compArray[0]);
+        int b = Integer.parseInt(compArray[2]);
+        char ch = compArray[1].charAt(0);
+
         switch (ch) {
 
             case '+':
-                System.out.println("a+b=" + (a + b));
+                System.out.println("= " + (a + b));
                 break;
             case '-':
-                System.out.println("a-b=" + (a - b));
+                System.out.println("= " + (a - b));
                 break;
             case '*':
-                System.out.println("a*b=" + (a * b));
+                System.out.println("= " + (a * b));
                 break;
             case '/':
                 double c;
                 c = (double) a / b;
-                System.out.println("a/b=" + c);
+                System.out.println("= " + c);
                 break;
             case '^':
                 int d = a;
                 if (b == 0)
-                    System.out.println("a^b=" + 1);
+                    System.out.println("= " + 1);
                 else {
                     for (int i = 1; i < b; i++)
                         d = d * a;
-                        System.out.println("a^b=" + d);
+                        System.out.println("= " + d);
                     }
                 break;
             case '%':
-                System.out.println("a%b=" + (a % b));
+                System.out.println("= " + (a % b));
                 break;
             }
         }
-    public void setA(int a) {
-        this.a = a;
+    public void setA(String a)
+    {
+        stringA = a;
     }
-    public void setB(int b) {
-        this.b = b;
-    }
-    public void setCh(char ch){
-        this.ch = ch;
-    }
+//    public void setB(String[] b) {
+//        compArray = Arrays.copyOf(b,3);
+//    }
+//    public void setCh(char ch){
+//        this.ch = ch;
+//    }
 }
