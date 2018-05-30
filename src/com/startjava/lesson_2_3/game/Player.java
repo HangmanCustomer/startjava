@@ -1,8 +1,9 @@
 package com.startjava.lesson_2_3.game;
 public class Player{
-	private String name;
+	private String name = "";
 	private int userNum;
 	private boolean win;
+	private int[] answers = new int[9];
 
 	public void setName(String name){
 		this.name = name;
@@ -26,6 +27,13 @@ public class Player{
 	public boolean getWin(){
 		return win;
 	}
-	
 
+
+	public void setAnswers(int index, int value){
+		answers[index] = value;
+	}
+
+	public int[] getAnswers(){
+		return answers;
+	}
 }
