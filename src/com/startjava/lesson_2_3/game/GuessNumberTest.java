@@ -9,33 +9,29 @@ public class GuessNumberTest {
 
 		while (yesOrNo.equals("y")) {
 
-			System.out.println("++++ ---- Отгадай число ---- ++++\nДиапазон от 0 до 10\n");
-			if (guessNumber.player01.getName().equals("") && guessNumber.player02.getName().equals("") ) {
-				System.out.print("Введите имя игрока I ");
+			System.out.println("++++ ---- Отгадай число ---- ++++\nДиапазон от 0 до 100\n");
+			if (guessNumber.player01.getName().equals("") && guessNumber.player02.getName().equals("") ) { //проверка необходимости
+				System.out.print("Введите имя игрока I ");                                              //повторно вводить имя
 				guessNumber.player01.setName(guessNumber.scanner.next());
 				System.out.print("Введите имя игрока II ");
 				guessNumber.player02.setName(guessNumber.scanner.next());
 			}
-			guessNumber.guessingProcess();
+			guessNumber.guessingProcess();  // игровой процесс
 			do {
 				System.out.println("Хотите сыграть еще [Y/N]");
 				yesOrNo = guessNumber.scanner.next();
 			}
-			while (yesOrNo.equals("n") && yesOrNo.equals("y"));
-			if (yesOrNo.equals("n")) {
+			while (yesOrNo.equals("n") && yesOrNo.equals("y"));       //проверка на повтор игры
+			if (yesOrNo.equals("n")) {                                  //вывод статистики в случае завершения
 				System.out.println("-------------|Статистика|------------");
 				System.out.print(guessNumber.player01.getName() + ": ");
-				int[] interimArray = Arrays.copyOf(guessNumber.player01.getAnswers(),guessNumber.player01.getAnswers().length);
-				for(int i:interimArray)
-					System.out.print(i + " ");
+                for (int i = 0; i < guessNumber.player01.getAnswersLength(); i++)     // вывод массива ответов игроков
+                    System.out.print(guessNumber.player01.getAnswers(i) + " ");       //с использованием геттера длинны массива
+				System.out.println();
 				System.out.print(guessNumber.player02.getName() + ": ");
-				interimArray = Arrays.copyOf(guessNumber.player02.getAnswers(),guessNumber.player02.getAnswers().length);
-				for(int i:interimArray)
-					System.out.print(i + " ");
-
+                for (int i = 0; i < guessNumber.player02.getAnswersLength(); i++)
+                    System.out.print(guessNumber.player02.getAnswers(i) + " ");
 			}
-//			else guessNumber = new GuessNumber();
-
 		}
 	}
 }
